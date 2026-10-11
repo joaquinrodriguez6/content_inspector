@@ -30,7 +30,7 @@ jobs:
         shell: bash
         run: |
           pip install pytest
-          pip install --no-index --find-links python/dist content_inspector_py
+          pip install --no-index --find-links python/dist content_inspector
           pytest python/tests
       - uses: actions/upload-artifact@v4
         with:

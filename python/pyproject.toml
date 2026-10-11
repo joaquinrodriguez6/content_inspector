@@ -3,11 +3,14 @@ requires = ["maturin>=1.0,<2.0"]
 build-backend = "maturin"
 
 [project]
-name = "content_inspector_py"
+name = "content_inspector"
 version = "0.1.0"
-description = "PyO3 bindings for the content_inspector Rust crate (text-vs-binary detection)."
+description = "Fast inspection of binary buffers to guess/determine the encoding"
 requires-python = ">=3.8"
 license = { text = "MIT OR Apache-2.0" }
 
 [project.optional-dependencies]
 test = ["pytest"]
+
+[tool.maturin]
+module-name = "content_inspector"

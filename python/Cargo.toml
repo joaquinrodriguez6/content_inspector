@@ -2,7 +2,7 @@
 name = "content_inspector_py"
 version = "0.1.0"
 edition = "2021"
-description = "PyO3 bindings for the content_inspector crate"
+description = "Fast inspection of binary buffers to guess/determine the encoding"
 license = "MIT/Apache-2.0"
 publish = false
 
