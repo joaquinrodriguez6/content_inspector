@@ -48,8 +48,8 @@ fn inspect_file(path: &PathBuf) -> std::io::Result<ContentType> {
 /// The first `SCAN` bytes of any object supporting the buffer protocol (`bytes`, `bytearray`,
 /// `memoryview`, ...).
 ///
-/// PyO3's `PyBuffer` is unavailable under `abi3-py38`, so anything that is not `bytes` goes
-/// through a Python `memoryview`; only the first `SCAN` bytes are ever copied.
+/// PyO3's `PyBuffer` is only available under abi3 from Python 3.11, so anything that is not
+/// `bytes` goes through a Python `memoryview`; only the first `SCAN` bytes are ever copied.
 fn prefix_of(data: &Bound<'_, PyAny>) -> PyResult<Vec<u8>> {
     if let Ok(b) = data.cast::<PyBytes>() {
         let b = b.as_bytes();
